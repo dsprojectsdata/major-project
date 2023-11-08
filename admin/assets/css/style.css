@@ -9,6 +9,49 @@ ul {
 li {
     list-style: none;
 }
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+label {
+    display: block;
+    margin: 5px 0;
+}
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #b6b6b6;
+}
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #b6b6b6;
+}
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #b6b6b6;
+}
+.success-msg {
+    color: green;
+    font-weight: bold;
+    font-size:18px
+}
+.save-btn {
+    padding: 10px;
+    min-width: 100px;
+    background: #01dbdf;
+    border: none;
+    color: #ffff;
+}
+.form-group {
+    margin: 12px 0;
+}
 
 .body {
     display: flex;
@@ -39,6 +82,11 @@ aside {
     width: 100%;
 }
 
+.content {
+    background: #efefef;
+    height: 100vh;
+    padding: 0 30px;
+}
 header {
     background-color: #e6e6e6;
 }
@@ -52,4 +100,18 @@ header ul a {
     color: #353333;
     font-size: 18px;
     text-decoration: none;
+}
+
+/* ------------------Category */
+
+.card-block {
+    display: flex;
+    gap: 50px;
+}
+
+.card-right,
+.card-left {
+    width: 50%;
+    background: #ffffff;
+    padding: 30px;
 }

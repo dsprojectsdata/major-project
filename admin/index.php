@@ -2,7 +2,7 @@
 include('layout/header.php')
 ?>
 
-<h1>sadas</h1>
+<h1>Dashboard</h1>
 
 <?php
 include('layout/footer.php')
