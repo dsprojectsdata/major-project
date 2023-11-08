@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.body {
+    display: flex;
+}
+
+.logo {
+    color: #fff;
+    padding: 0px 30px;
+}
+
+aside {
+    width: 250px;
+    background: #404e67;
+    height: 100vh;
+}
+
+.sidebar li {
+    padding: 10px 30px;
+}
+.sidebar li a {
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+/* ---------Content Area------ */
+.content-area {
+    width: 100%;
+}
+
+header {
+    background-color: #e6e6e6;
+}
+
+header ul {
+    display: flex;
+    gap: 20px;
+    padding: 15px 30px;
+}
+header ul a {
+    color: #353333;
+    font-size: 18px;
+    text-decoration: none;
+}
