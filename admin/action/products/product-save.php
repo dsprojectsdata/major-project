@@ -9,14 +9,41 @@ $description = $_POST['description'];
 $category = $_POST['category'];
 $image = $_POST['image'];
 
+$errors = [];
 
-$sql = " INSERT INTO product (name,price,description,category,img) VALUES ('$name','$price','$description','$category','$image')";
-
-$result = mysqli_query($con, $sql);
-
-if ($result) {
-      $_SESSION['success'] = "Product saved successfully.";
-} else {
-      $_SESSION['error'] = "Some error occurred.";
+if ($name == '') {
+      $errors['name'] = "name is requrired";
 }
-header("location:$admin_url/products/product.php");
+
+if ($price == '') {
+      $errors['price'] = "price is requrired";
+}
+
+if ($description == '') {
+      $errors['description'] = "description is requrired";
+}
+if ($category == '') {
+      $errors['category'] = "category is requrired";
+}
+if ($image == '') {
+      $errors['image'] = "image is requrired";
+}
+if (count($errors) > 0) {
+      $_SESSION['error']  = $errors;
+      // header('location:http://localhost/full-stack/form/');
+} else {
+
+      $sql = " INSERT INTO product (name,price,description,category,img) VALUES ('$name','$price','$description','$category','$image')";
+
+      $result = mysqli_query($con, $sql);
+
+      if ($result) {
+            $_SESSION['success'] = "Product saved successfully.";
+      } else {
+            $_SESSION['error'] = "Some error occurred.";
+      }
+}
+
+
+
+header("location:" . $admin_url . "products/product.php");

@@ -1,6 +1,11 @@
 <?php
 include('../layout/header.php');
 
+if (isset($_SESSION['error'])) {
+      $error = $_SESSION['error'];
+}
+
+
 $sql = " SELECT * from category ";
 
 $result = mysqli_query($con, $sql);
@@ -23,7 +28,7 @@ $result = mysqli_query($con, $sql);
                   <div class="form-group">
                         <label for="">Category</label>
                         <select name="category">
-                               <option value="">Select Category</option>
+                              <option value="">Select Category</option>
                               <?php $i = 1;
                               while ($data = $result->fetch_assoc()) {
                               ?>
@@ -31,26 +36,56 @@ $result = mysqli_query($con, $sql);
 
                               <?php } ?>
                         </select>
+                        <p class="error"><?php
+                                          if (isset($error['category'])) {
+                                                echo $error['category'];
+                                                unset($_SESSION['error']['category']);
+                                          }
+                                          ?></p>
                   </div>
 
                   <div class="form-group">
                         <label for="">Name</label>
                         <input type="text" name="name" placeholder="Enter category name">
+                        <p class="error"><?php
+                                          if (isset($error['name'])) {
+                                                echo $error['name'];
+                                                unset($_SESSION['error']['name']);
+                                          }
+                                          ?></p>
                   </div>
 
                   <div class="form-group">
                         <label for="">Price</label>
                         <input type="text" name="price" placeholder="Enter category price">
+                        <p class="error"><?php
+                                          if (isset($error['price'])) {
+                                                echo $error['price'];
+                                                unset($_SESSION['error']['price']);
+                                          }
+                                          ?></p>
                   </div>
 
                   <div class="form-group">
                         <label for="">Description</label>
                         <textarea name="description" rows="6"></textarea>
+                        <p class="error"><?php
+                                          if (isset($error['description'])) {
+                                                echo $error['description'];
+                                                unset($_SESSION['error']['description']);
+                                          }
+                                          ?></p>
                   </div>
 
                   <div class="form-group">
                         <label for="">Image</label>
                         <input type="file" name="image" placeholder="Enter category name">
+                        <p class="error"><?php
+                                          if (isset($error['image'])) {
+                                                echo $error['image'];
+                                                unset($_SESSION['error']['image']);
+                                          }
+                                          ?></p>
                   </div>
 
                   <div>
@@ -60,7 +95,7 @@ $result = mysqli_query($con, $sql);
       </div>
 
       <div class="card-right">
-            
+
       </div>
 </div>
 

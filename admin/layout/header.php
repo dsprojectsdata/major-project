@@ -1,5 +1,7 @@
 <?php
-include('../../config/connection.php');
+// include('../../config/connection.php');
+include(__DIR__ . '/../../config/connection.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
