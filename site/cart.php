@@ -1,52 +1,81 @@
 <?php
-include('header.php');
+include(__DIR__ . '/layout/header.php');
 // echo "<pre>";
 // echo "</pre>";
 
 ?>
 
+<section class="page-banner-section">
+      <div class="container">
+            <div class="page-banner-content">
+                  <h1>My Cart</h1>
+            </div>
+      </div>
+</section>
 
-<div class="table-wrapper">
-      <table>
-            <thead>
-                  <tr>
-                        <th>S. No</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Delete</th>
-                  </tr>
-            </thead>
-            <tbody>
-                  <?php
-                  $i = 1;
-                  if (isset($_SESSION['cart'])) {
-                        foreach ($_SESSION['cart'] as $value) { ?>
+
+<section class="cart-page">
+      <div class="container">
+            <div class="cart-block">
+                  <table>
+                        <thead>
                               <tr>
-                                    <td><?php echo $i++; ?></td>
-                                    <td><?php echo $value['name'] ?></td>
-                                    <td><?php echo $value['price'] ?></td>
-                                    <td>Remove</td>
+                                    <th>S. No</th>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Delete</th>
                               </tr>
-                  <?php }
+                        </thead>
+                        <tbody>
+                              <tr>
+                                    <td>2</td>
+                                    <td><img src="<?php echo $site_url . 'assets/img/products/shop-1.jpg' ?>" class="cart-img"></td>
+                                    <td>Black Boys Shirt</td>
+                                    <td><b>$200</b></td>
+                                    <td><a href="#"><i class="fa-solid fa-xmark"></i></a></td>
+                              </tr>
+                              <tr>
+                                    <td>2</td>
+                                    <td><img src="<?php echo $site_url . 'assets/img/products/shop-1.jpg' ?>" class="cart-img"></td>
+                                    <td>Black Boys Shirt Black Boys Shirt Black Boys Shirt</td>
+                                    <td><b>$200</b></td>
+                                    <td><a href="#"><i class="fa-solid fa-xmark"></i></a></td>
+                              </tr>
+                        </tbody>
+                  </table>
+            </div>
+            <?php
+            $total = 0;
+            if (isset($_SESSION['cart'])) {
+
+                  foreach ($_SESSION['cart'] as $key => $value) {
+                        $total += $value['price'];
                   }
-                  ?>
+            }
+            ?>
+            <div class="cart-total">
+                  <table>
+                        <thead>
+                              <tr>
+                                    <th colspan="2">Cart Total</th>
+                              </tr>
+                        </thead>
+                        <tbody>
+                              <tr>
+                                    <td>Order Total:</td>
+                                    <td><b>$<?php echo $total ?></b></td>
+                              </tr>
+                              <tr>
+                                    <td colspan="2" style="text-align:right"><button type="button" class="primary-button">Proceed To Checkout</button></td>
+                              </tr>
+                        </tbody>
+                  </table>
+            </div>
+      </div>
+</section>
 
-            </tbody>
-      </table>
-</div>
+
 <?php
-// print_r($_SESSION['cart']);
-
-$total = 0;
-if (isset($_SESSION['cart'])) {
-
-      foreach ($_SESSION['cart'] as $key => $value) {
-            $total += $value['price'];
-      }
-}
+include(__DIR__ . '/layout/footer.php');
 ?>
-<h1>Total - <?php echo $total ?></h1>
-
-<!-- 0 + 1000 = 1000
-1000+30 = 1030
-1030+20 = 1050 -->
