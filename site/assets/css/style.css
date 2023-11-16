@@ -48,6 +48,33 @@ li {
 ul {
     padding: 0;
 }
+label {
+    display: block;
+    color: #696969;
+}
+.text-grey {
+    color: #696969;
+}
+
+input {
+    padding: 12px;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid #c3c1c1;
+    margin: 10px 0;
+    background: transparent;
+}
+input:focus {
+    border: 1px solid #ee838b;
+    outline: 0;
+}
+
+.form-input {
+    margin: 10px 0;
+}
+.form-btn button {
+    width: 100%;
+}
 
 .primary-button {
     color: #fff;
@@ -87,6 +114,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 10px 0;
+    align-items: center;
 }
 
 .header-logo img {
@@ -96,6 +124,7 @@ header {
     display: flex;
     justify-content: space-between;
     gap: 30px;
+    align-items: center;
 }
 
 span.cart-count {
@@ -105,7 +134,7 @@ span.cart-count {
     width: 18px;
     height: 18px;
     position: absolute;
-    top: 18px;
+    top: 30px;
     font-size: 13px;
     line-height: 18px;
     text-align: center;
@@ -253,18 +282,7 @@ footer {
     margin: 15px 0;
     color: #848484;
 }
-.footer-newsletter input {
-    padding: 12px;
-    font-size: 14px;
-    width: 100%;
-    border: 1px solid #222;
-    margin: 10px 0;
-    background: transparent;
-}
-.footer-newsletter input:focus {
-    border: 1px solid #ee838b;
-    outline: 0;
-}
+
 .copyright-section {
     background: #000;
     padding: 15px 0;
@@ -328,4 +346,26 @@ footer {
 .cart-total table td {
     text-align: left;
     padding: 20px 40px;
+}
+
+/* -------------------------- LOGIN -------------------------- */
+
+.auth-block {
+    width: 50%;
+    margin: 50px auto;
+    padding: 30px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.auth-heading {
+  width: 70%;
+  margin: auto;
+}
+.auth-heading h1 {
+    font-size: 30px;
+    /* color: #696969; */
+}
+
+.auth-form {
+    width: 70%;
+    margin: auto;
 }

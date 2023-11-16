@@ -8,7 +8,7 @@ include(__DIR__ . '/layout/header.php');
 <section class="page-banner-section">
       <div class="container">
             <div class="page-banner-content">
-                  <h1>My Cart</h1>
+                  <h1>MY ORDERS</h1>
             </div>
       </div>
 </section>
@@ -24,7 +24,7 @@ include(__DIR__ . '/layout/header.php');
                                     <th>Image</th>
                                     <th>Name</th>
                                     <th>Price</th>
-                                    <th>Delete</th>
+                                    <th>Date</th>
                               </tr>
                         </thead>
                         <tbody>
@@ -33,14 +33,14 @@ include(__DIR__ . '/layout/header.php');
                                     <td><img src="<?php echo $site_url . 'assets/img/products/shop-1.jpg' ?>" class="cart-img"></td>
                                     <td>Black Boys Shirt</td>
                                     <td><b>$200</b></td>
-                                    <td><a href="#"><i class="fa-solid fa-xmark"></i></a></td>
+                                    <td>2023-02-02</td>
                               </tr>
                               <tr>
                                     <td>2</td>
                                     <td><img src="<?php echo $site_url . 'assets/img/products/shop-1.jpg' ?>" class="cart-img"></td>
                                     <td>Black Boys Shirt Black Boys Shirt Black Boys Shirt</td>
                                     <td><b>$200</b></td>
-                                    <td><a href="#"><i class="fa-solid fa-xmark"></i></a></td>
+                                    <td>2023-02-02</td>
                               </tr>
                         </tbody>
                   </table>
@@ -54,24 +54,6 @@ include(__DIR__ . '/layout/header.php');
                   }
             }
             ?>
-            <div class="cart-total">
-                  <table>
-                        <thead>
-                              <tr>
-                                    <th colspan="2">Cart Total</th>
-                              </tr>
-                        </thead>
-                        <tbody>
-                              <tr>
-                                    <td>Order Total:</td>
-                                    <td><b>$<?php echo $total ?></b></td>
-                              </tr>
-                              <tr>
-                                    <td colspan="2" style="text-align:right"><button type="button" class="primary-button">Proceed To Checkout</button></td>
-                              </tr>
-                        </tbody>
-                  </table>
-            </div>
       </div>
 </section>
 

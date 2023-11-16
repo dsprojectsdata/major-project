@@ -1,7 +1,7 @@
 <?php
 include(__DIR__ . '/layout/header.php');
 
-session_destroy();
+// session_destroy();
 $sql = "SELECT * from product ";
 
 $result = mysqli_query($con, $sql);
@@ -24,7 +24,6 @@ $result = mysqli_query($con, $sql);
       <div class="container">
             <div class="section-heading">
                   <h3>Top Category</h3>
-                  <p>Follow the most popular trends and get exclusive items from castro shop</p>
             </div>
             <div class="category-block">
                   <div class="category">
