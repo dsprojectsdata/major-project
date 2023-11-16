@@ -55,22 +55,34 @@ $result = mysqli_query($con, $sql);
             <div class="product-block">
                   <div class="product">
                         <img src="<?php echo $site_url . 'assets/img/products/shop-1.jpg' ?>" alt="">
-                        <a href="#"><button class="primary-button">Add To Cart</button></a>
+                        <div class="product-btns">
+                              <a href="#"><button class="primary-button"><i class="fa-solid fa-cart-plus"></i></button></a>
+                              <a href="<?php echo $site_url ?>products/details.php"><button class="primary-button"><i class="fa-solid fa-eye"></i></button></a>
+                        </div>
                   </div>
 
                   <div class="product">
                         <img src="<?php echo $site_url . 'assets/img/products/shop-2.jpg' ?>" alt="">
-                        <a href="#"><button class="primary-button">Add To Cart</button></a>
+                        <div class="product-btns">
+                              <a href="#"><button class="primary-button"><i class="fa-solid fa-cart-plus"></i></button></a>
+                              <a href="#"><button class="primary-button"><i class="fa-solid fa-eye"></i></button></a>
+                        </div>
                   </div>
 
                   <div class="product">
                         <img src="<?php echo $site_url . 'assets/img/products/shop-3.jpg' ?>" alt="">
-                        <a href="#"><button class="primary-button">Add To Cart</button></a>
+                        <div class="product-btns">
+                              <a href="#"><button class="primary-button"><i class="fa-solid fa-cart-plus"></i></button></a>
+                              <a href="#"><button class="primary-button"><i class="fa-solid fa-eye"></i></button></a>
+                        </div>
                   </div>
 
                   <div class="product">
                         <img src="<?php echo $site_url . 'assets/img/products/shop-4.jpg' ?>" alt="">
-                        <a href="#"><button class="primary-button">Add To Cart</button></a>
+                        <div class="product-btns">
+                              <a href="#"><button class="primary-button"><i class="fa-solid fa-cart-plus"></i></button></a>
+                              <a href="#"><button class="primary-button"><i class="fa-solid fa-eye"></i></button></a>
+                        </div>
                   </div>
             </div>
       </div>

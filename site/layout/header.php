@@ -38,6 +38,8 @@ echo "</pre>";
                                     } else {
                                         echo 0;
                                     } ?> </span></a></li>
+                        <li><a href="<?php echo $site_url ?>products/search.php"> <i class="fa-solid fa-search"></i></a></li>
+
                         <li><a href="<?php echo $site_url ?>auth/login.php"><button class="primary-button">Login</button></a></li>
                     </ul>
                 </div>

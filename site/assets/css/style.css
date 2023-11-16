@@ -55,6 +55,9 @@ label {
 .text-grey {
     color: #696969;
 }
+.my-10 {
+    margin: 10px 0;
+}
 
 input {
     padding: 12px;
@@ -67,6 +70,9 @@ input {
 input:focus {
     border: 1px solid #ee838b;
     outline: 0;
+}
+.w-100{
+  width: 100%;
 }
 
 .form-input {
@@ -213,12 +219,12 @@ span.cart-count {
     justify-content: center;
 }
 .product {
-    display: flex;
+    /* display: flex; */
     position: relative;
     width: 270px;
     text-align: center;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     transition: 0.5s;
 }
 .product:hover {
@@ -227,7 +233,7 @@ span.cart-count {
 .product img {
     max-width: 100%;
 }
-.product a {
+.product-btns {
     position: absolute;
     bottom: 2%;
     width: 100%;
@@ -357,15 +363,79 @@ footer {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 .auth-heading {
-  width: 70%;
-  margin: auto;
+    width: 70%;
+    margin: auto;
 }
 .auth-heading h1 {
     font-size: 30px;
-    /* color: #696969; */
 }
 
 .auth-form {
     width: 70%;
     margin: auto;
+}
+
+/* --------------------------------------------PRODUCTS DETAILS---------------------------------------------------- */
+
+.pro-details-block {
+    margin: 70px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.pro-details-left {
+    width: 50%;
+    text-align: center;
+}
+
+.pro-details-right {
+    width: 50%;
+}
+.pro-details-desc {
+    width: 80%;
+    margin: 40px auto;
+    line-height: 1.7;
+}
+
+/* --------------------------------------------PRODUCTS SEARCH---------------------------------------------------- */
+
+.pro-search-block {
+    margin: 70px 0;
+    display: flex;
+    gap: 30px;
+}
+
+.pro-search-left {
+    width: 20%;
+}
+
+.pro-search-right {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.filter-option ul{
+padding: revert;
+}
+.filter-option ul li{
+  list-style: square;
+  }
+.price-filter {
+    display: flex;
+    gap: 20px;
+}
+.pro-search-input{
+  position: relative;
+}
+.pro-search-btn {
+  position: absolute;
+  right: 5px;
+  top: 20px;
+  background: transparent;
+  border: 0;
+  color:   #ee838b;
+  font-size: 20px;
+  cursor: pointer;
 }
