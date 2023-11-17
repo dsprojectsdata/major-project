@@ -44,7 +44,7 @@ if (count($errors) > 0) {
       $result = mysqli_query($con, $sql);
 
       if ($result) {
-            move_uploaded_file($_FILES['image']['tmp_name'], '../../assets/uploads/products/' . $_FILES['image']['name']);
+            move_uploaded_file($_FILES['image']['tmp_name'], '../../../site/assets/uploads/products/' . $_FILES['image']['name']);
             $_SESSION['success'] = "Product saved successfully.";
       } else {
             $_SESSION['error'] = "Some error occurred.";

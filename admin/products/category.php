@@ -16,7 +16,7 @@ include('../layout/header.php');
                                                 unset($_SESSION['success']);
                                           } ?></p>
             </div>
-            <form method="post" action="<?php echo $admin_url ?>action/products/category-save.php">
+            <form method="post" action="<?php echo $admin_url ?>action/products/category-save.php" enctype="multipart/form-data">
                   <div class="form-group">
                         <label for="">Name</label>
                         <input type="text" name="name" placeholder="Enter category name">

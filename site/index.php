@@ -28,9 +28,9 @@ $cateResult = mysqli_query($con, $cateSql);
                   <h3>Top Category</h3>
             </div>
             <div class="category-block">
-                  <div class="category">
-                        <img src="<?php echo $site_url . 'assets/img/categories/category-1.png' ?>" alt="">
-                  </div>
+                        <div class="category">
+                              <img src="<?php echo $site_url . 'assets/img/categories/category-1.png' ?>" alt="">
+                        </div>
 
                   <div class="category">
                         <img src="<?php echo $site_url . 'assets/img/categories/category-2.png' ?>" alt="">
@@ -59,7 +59,7 @@ $cateResult = mysqli_query($con, $cateSql);
                   ?>
 
                         <div class="product">
-                              <img src="<?php echo $admin_url . 'assets/uploads/products/'.$data['img'] ?>" alt="">
+                              <img src="<?php echo $admin_url . 'assets/uploads/products/' . $data['img'] ?>" alt="">
                               <div class="my-10 text-left">
                                     <p class="px-10"><?php echo $data['name'] ?> </p>
                                     <p class="px-10"><b>$<?php echo $data['price'] ?></b></p>

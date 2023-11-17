@@ -73,6 +73,9 @@ label {
 .text-center {
     text-align: center;
 }
+.text-right {
+    text-align: right;
+}
 
 input {
     padding: 12px;
@@ -149,6 +152,10 @@ header {
     justify-content: space-between;
     gap: 30px;
     align-items: center;
+}
+
+.header-menu ul li a:hover{
+    color: #ee838b;
 }
 
 span.cart-count {
@@ -435,12 +442,6 @@ footer {
     flex-wrap: wrap;
     gap: 30px;
 }
-.filter-option ul {
-    padding: revert;
-}
-.filter-option ul li {
-    list-style: square;
-}
 .price-filter {
     display: flex;
     gap: 20px;
@@ -457,4 +458,9 @@ footer {
     color: #ee838b;
     font-size: 20px;
     cursor: pointer;
+}
+.filter-option select{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
 }
