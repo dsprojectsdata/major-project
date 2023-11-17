@@ -2,9 +2,11 @@
 include(__DIR__ . '/layout/header.php');
 
 // session_destroy();
-$sql = "SELECT * from product ";
+$proSql = "SELECT * from product ";
+$proResult = mysqli_query($con, $proSql);
 
-$result = mysqli_query($con, $sql);
+$cateSql = "SELECT * from category ";
+$cateResult = mysqli_query($con, $cateSql);
 ?>
 
 <section class="banner-section">
@@ -53,37 +55,61 @@ $result = mysqli_query($con, $sql);
                   <p>There are some product that we featured for choose your best</p>
             </div>
             <div class="product-block">
+                  <?php while ($data = $proResult->fetch_assoc()) {
+                  ?>
+
+                        <div class="product">
+                              <img src="<?php echo $admin_url . 'assets/uploads/products/'.$data['img'] ?>" alt="">
+                              <div class="my-10 text-left">
+                                    <p class="px-10"><?php echo $data['name'] ?> </p>
+                                    <p class="px-10"><b>$<?php echo $data['price'] ?></b></p>
+                              </div>
+                              <div class="product-btns my-10">
+                                    <a href="<?php echo $site_url ?>action/cart-add.php?id=<?php echo $data['id'] ?>"><button class="primary-button"><i class="fa-solid fa-cart-plus"></i></button></a>
+                                    <a href="<?php echo $site_url . 'products/details.php?id=' . $data['id'] ?>"><button class="primary-button"><i class="fa-solid fa-eye"></i></button></a>
+                              </div>
+                        </div>
+                  <?php
+                  }
+                  ?>
+
+                  <!--    <div class="product">
+                        <img src="<?php echo $site_url . 'assets/img/products/shop-2.jpg' ?>" alt="">
+                        <div class="my-10 text-left">
+                              <p class="px-10">sd as d safk hdsfjk fdfgh fd sd as d safk hdsfjk fdfgh fd </p>
+                              <p class="px-10"><b>$100</b></p>
+                        </div>
+                        <div class="product-btns my-10">
+                              <a href="#"><button class="primary-button"><i class="fa-solid fa-cart-plus"></i></button></a>
+                              <a href="<?php echo $site_url ?>products/details.php"><button class="primary-button"><i class="fa-solid fa-eye"></i></button></a>
+                        </div>
+                  </div>
+
+
                   <div class="product">
-                        <img src="<?php echo $site_url . 'assets/img/products/shop-1.jpg' ?>" alt="">
-                        <div class="product-btns">
+                        <img src="<?php echo $site_url . 'assets/img/products/shop-3.jpg' ?>" alt="">
+                        <div class="my-10 text-left">
+                              <p class="px-10">sd as d safk hdsfjk fdfgh fd sd as d safk hdsfjk fdfgh fd </p>
+                              <p class="px-10"><b>$100</b></p>
+                        </div>
+                        <div class="product-btns my-10">
                               <a href="#"><button class="primary-button"><i class="fa-solid fa-cart-plus"></i></button></a>
                               <a href="<?php echo $site_url ?>products/details.php"><button class="primary-button"><i class="fa-solid fa-eye"></i></button></a>
                         </div>
                   </div>
 
                   <div class="product">
-                        <img src="<?php echo $site_url . 'assets/img/products/shop-2.jpg' ?>" alt="">
-                        <div class="product-btns">
-                              <a href="#"><button class="primary-button"><i class="fa-solid fa-cart-plus"></i></button></a>
-                              <a href="#"><button class="primary-button"><i class="fa-solid fa-eye"></i></button></a>
-                        </div>
-                  </div>
-
-                  <div class="product">
-                        <img src="<?php echo $site_url . 'assets/img/products/shop-3.jpg' ?>" alt="">
-                        <div class="product-btns">
-                              <a href="#"><button class="primary-button"><i class="fa-solid fa-cart-plus"></i></button></a>
-                              <a href="#"><button class="primary-button"><i class="fa-solid fa-eye"></i></button></a>
-                        </div>
-                  </div>
-
-                  <div class="product">
                         <img src="<?php echo $site_url . 'assets/img/products/shop-4.jpg' ?>" alt="">
-                        <div class="product-btns">
-                              <a href="#"><button class="primary-button"><i class="fa-solid fa-cart-plus"></i></button></a>
-                              <a href="#"><button class="primary-button"><i class="fa-solid fa-eye"></i></button></a>
+                        <div class="my-10 text-left">
+                              <p class="px-10">sd as d safk hdsfjk fdfgh fd sd as d safk hdsfjk fdfgh fd </p>
+                              <p class="px-10"><b>$100</b></p>
                         </div>
-                  </div>
+                        <div class="product-btns my-10">
+                              <a href="#"><button class="primary-button"><i class="fa-solid fa-cart-plus"></i></button></a>
+                              <a href="<?php echo $site_url ?>products/details.php"><button class="primary-button"><i class="fa-solid fa-eye"></i></button></a>
+                        </div>
+                  </div> -->
+
             </div>
       </div>
 </section>
@@ -94,8 +120,8 @@ $result = mysqli_query($con, $sql);
 
 
 <?php
-while ($data = $result->fetch_assoc()) { ?>
-      <!-- <div class="card">
+while ($data = $proResult->fetch_assoc()) { ?>
+      <div class="card">
             <button class="card__love-btn">
                   <svg viewBox="0 0 512 512" width="100" title="heart">
                         <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
@@ -116,7 +142,7 @@ while ($data = $result->fetch_assoc()) { ?>
                         <h4 class="price">$<?php echo $data['price'] ?></h4>
                   </div>
             </div>
-      </div> -->
+      </div>
 <?php
 }
 ?>

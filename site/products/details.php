@@ -2,7 +2,11 @@
 include(__DIR__ . '/../layout/header.php');
 // echo "<pre>";
 // echo "</pre>";
+$id = $_GET['id'];
 
+$sql = " SELECT * FROM product WHERE id =$id";
+$result = mysqli_query($con, $sql);
+$pro_data = $result->fetch_assoc();
 ?>
 
 <section class="page-banner-section">
@@ -18,24 +22,24 @@ include(__DIR__ . '/../layout/header.php');
       <div class="container">
             <div class="pro-details-block">
                   <div class="pro-details-left">
-                        <img src="<?php echo $site_url . 'assets/img/products/shop-1.jpg' ?>" alt="">
+                        <img src="<?php echo $admin_url . 'assets/uploads/products/'.$pro_data['img'] ?>" alt="">
 
                   </div>
                   <div class="pro-details-right">
-                        <h2 class="tesxt-grey">Multi-Way Ultra Crop Top</h2>
-                        <p><b>$90.00</b></p>
+                        <h2 class="tesxt-grey"><?php echo $pro_data['name']; ?></h2>
+                        <p><b>$<?php echo $pro_data['price']; ?></b></p>
                         <p class="my-10 text-grey">
-                              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. sed ut perspic atis unde omnis iste natus error sit voluptam accusan enim ipsam voluptam quia voluptas sit aspern odit aut fugit.
+                              <?php echo $pro_data['description']; ?>
                         </p>
                         <p class="my-10"><b>Category : </b> <span class="text-grey"> Accessories</span></p>
-                        <a href="#"><button class="primary-button">Add To Cart</button></a>
+                        <a href="<?php echo $site_url ?>action/cart-add.php?id=<?php echo $pro_data['id'] ?>"><button class="primary-button">Add To Cart</button></a>
 
                   </div>
             </div>
             <div class="pro-details-desc">
                   <p class="my-10">
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. sed ut perspic atis unde omnis iste natus error sit voluptam accusan enim ipsam voluptam quia voluptas sit aspern odit aut fugit.
-                  </p>
+                  <?php echo $pro_data['long_description']; ?>
+            </p>
             </div>
       </div>
 </section>

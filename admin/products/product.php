@@ -24,7 +24,7 @@ $result = mysqli_query($con, $sql);
                                                 unset($_SESSION['success']);
                                           } ?></p>
             </div>
-            <form method="post" action="<?php echo $admin_url ?>action/products/product-save.php">
+            <form method="post" enctype="multipart/form-data" action="<?php echo $admin_url ?>action/products/product-save.php">
                   <div class="form-group">
                         <label for="">Category</label>
                         <select name="category">
@@ -73,6 +73,17 @@ $result = mysqli_query($con, $sql);
                                           if (isset($error['description'])) {
                                                 echo $error['description'];
                                                 unset($_SESSION['error']['description']);
+                                          }
+                                          ?></p>
+                  </div>
+
+                  <div class="form-group">
+                        <label for="">Long Description</label>
+                        <textarea name="long_description" rows="6"></textarea>
+                        <p class="error"><?php
+                                          if (isset($error['long_description'])) {
+                                                echo $error['long_description'];
+                                                unset($_SESSION['error']['long_description']);
                                           }
                                           ?></p>
                   </div>

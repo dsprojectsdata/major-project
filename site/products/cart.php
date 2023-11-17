@@ -1,6 +1,7 @@
 <?php
 include(__DIR__ . '/../layout/header.php');
 // echo "<pre>";
+// print_r($_SESSION['cart']);
 // echo "</pre>";
 
 ?>
@@ -28,27 +29,34 @@ include(__DIR__ . '/../layout/header.php');
                               </tr>
                         </thead>
                         <tbody>
-                              <tr>
-                                    <td>2</td>
-                                    <td><img src="<?php echo $site_url . 'assets/img/products/shop-1.jpg' ?>" class="cart-img"></td>
-                                    <td>Black Boys Shirt</td>
-                                    <td><b>$200</b></td>
-                                    <td><a href="#"><i class="fa-solid fa-xmark"></i></a></td>
-                              </tr>
-                              <tr>
-                                    <td>2</td>
-                                    <td><img src="<?php echo $site_url . 'assets/img/products/shop-1.jpg' ?>" class="cart-img"></td>
-                                    <td>Black Boys Shirt Black Boys Shirt Black Boys Shirt</td>
-                                    <td><b>$200</b></td>
-                                    <td><a href="#"><i class="fa-solid fa-xmark"></i></a></td>
-                              </tr>
+
+                              <?php
+                              $i = 1;
+                              if (isset($_SESSION['cart'])) {
+
+                                    foreach ($_SESSION['cart'] as $key => $item) { ?>
+                                          <tr>
+                                                <td><?php echo $i++; ?></td>
+                                                <td><img src="<?php echo $site_url . 'assets/img/products/shop-1.jpg' ?>" class="cart-img"></td>
+                                                <td><?php echo $item['name'] ?></td>
+                                                <td><b>$<?php echo $item['price'] ?></b></td>
+                                                <td><a href="<?php echo $site_url .'action/cart-product-remove.php?id='.$item['id'] ?>"><i class="fa-solid fa-xmark"></i></a></td>
+                                          </tr>
+                                    <?php
+                                    }
+                              } else { ?>
+                                    <tr>
+                                          <td colspan="5" style="text-align:center">No product in cart</td>
+
+                                    </tr>
+                              <?php }
+                              ?>
                         </tbody>
                   </table>
             </div>
             <?php
             $total = 0;
             if (isset($_SESSION['cart'])) {
-
                   foreach ($_SESSION['cart'] as $key => $value) {
                         $total += $value['price'];
                   }
