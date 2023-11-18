@@ -1,5 +1,12 @@
 <?php
 include('../layout/header.php');
+if (isset($_SESSION['userInfo'])) {
+      header("location:$site_url");
+}
+
+if (isset($_SESSION['error'])) {
+      $error = $_SESSION['error'];
+}
 ?>
 
 <section class="auth-section ">
@@ -22,14 +29,38 @@ include('../layout/header.php');
                               <div class="form-input">
                                     <label for="">Name</label>
                                     <input type="text" placeholder="Enter name" name="name">
+                                    <?php
+                                    if (isset($error['name'])) { ?>
+                                          <p class="error-msg"><?php echo $error['name']; ?></p>
+
+                                    <?php
+                                          unset($_SESSION['error']['name']);
+                                    }
+                                    ?>
                               </div>
                               <div class="form-input">
                                     <label for="">Email</label>
                                     <input type="text" placeholder="Enter email" name="email">
+                                    <?php
+                                    if (isset($error['email'])) { ?>
+                                          <p class="error-msg"><?php echo $error['email']; ?></p>
+
+                                    <?php
+                                          unset($_SESSION['error']['email']);
+                                    }
+                                    ?>
                               </div>
                               <div class="form-input">
                                     <label for="">Password</label>
                                     <input type="text" placeholder="Enter password" name="password">
+                                    <?php
+                                    if (isset($error['password'])) { ?>
+                                          <p class="error-msg"><?php echo $error['password']; ?></p>
+
+                                    <?php
+                                          unset($_SESSION['error']['password']);
+                                    }
+                                    ?>
                               </div>
                               <div class="form-input form-btn">
                                     <button class="primary-button">Signup</button>

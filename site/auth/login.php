@@ -1,5 +1,12 @@
 <?php
 include('../layout/header.php');
+
+if (isset($_SESSION['userInfo'])) {
+      header("location:$site_url");
+}
+
+
+
 ?>
 
 <section class="auth-section ">

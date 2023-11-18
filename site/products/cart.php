@@ -47,7 +47,6 @@ include(__DIR__ . '/../layout/header.php');
                               } else { ?>
                                     <tr>
                                           <td colspan="5" style="text-align:center">No product in cart</td>
-
                                     </tr>
                               <?php }
                               ?>

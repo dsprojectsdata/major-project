@@ -25,24 +25,18 @@ $cateResult = mysqli_query($con, $cateSql);
 <section class="category-section section-separator">
       <div class="container">
             <div class="section-heading">
-                  <h3>Top Category</h3>
+                  <h3>Top Categories</h3>
             </div>
             <div class="category-block">
+                  <?php
+                  while ($data = $cateResult->fetch_assoc()) { ?>
                         <div class="category">
-                              <img src="<?php echo $site_url . 'assets/img/categories/category-1.png' ?>" alt="">
+                              <img src="<?php echo $site_url . 'assets/uploads/category/' . $data['image'] ?>" alt="">
                         </div>
 
-                  <div class="category">
-                        <img src="<?php echo $site_url . 'assets/img/categories/category-2.png' ?>" alt="">
-                  </div>
-
-                  <div class="category">
-                        <img src="<?php echo $site_url . 'assets/img/categories/category-3.png' ?>" alt="">
-                  </div>
-
-                  <div class="category">
-                        <img src="<?php echo $site_url . 'assets/img/categories/category-4.png' ?>" alt="">
-                  </div>
+                  <?php
+                  }
+                  ?>
             </div>
       </div>
 </section>
@@ -72,44 +66,6 @@ $cateResult = mysqli_query($con, $cateSql);
                   <?php
                   }
                   ?>
-
-                  <!--    <div class="product">
-                        <img src="<?php echo $site_url . 'assets/img/products/shop-2.jpg' ?>" alt="">
-                        <div class="my-10 text-left">
-                              <p class="px-10">sd as d safk hdsfjk fdfgh fd sd as d safk hdsfjk fdfgh fd </p>
-                              <p class="px-10"><b>$100</b></p>
-                        </div>
-                        <div class="product-btns my-10">
-                              <a href="#"><button class="primary-button"><i class="fa-solid fa-cart-plus"></i></button></a>
-                              <a href="<?php echo $site_url ?>products/details.php"><button class="primary-button"><i class="fa-solid fa-eye"></i></button></a>
-                        </div>
-                  </div>
-
-
-                  <div class="product">
-                        <img src="<?php echo $site_url . 'assets/img/products/shop-3.jpg' ?>" alt="">
-                        <div class="my-10 text-left">
-                              <p class="px-10">sd as d safk hdsfjk fdfgh fd sd as d safk hdsfjk fdfgh fd </p>
-                              <p class="px-10"><b>$100</b></p>
-                        </div>
-                        <div class="product-btns my-10">
-                              <a href="#"><button class="primary-button"><i class="fa-solid fa-cart-plus"></i></button></a>
-                              <a href="<?php echo $site_url ?>products/details.php"><button class="primary-button"><i class="fa-solid fa-eye"></i></button></a>
-                        </div>
-                  </div>
-
-                  <div class="product">
-                        <img src="<?php echo $site_url . 'assets/img/products/shop-4.jpg' ?>" alt="">
-                        <div class="my-10 text-left">
-                              <p class="px-10">sd as d safk hdsfjk fdfgh fd sd as d safk hdsfjk fdfgh fd </p>
-                              <p class="px-10"><b>$100</b></p>
-                        </div>
-                        <div class="product-btns my-10">
-                              <a href="#"><button class="primary-button"><i class="fa-solid fa-cart-plus"></i></button></a>
-                              <a href="<?php echo $site_url ?>products/details.php"><button class="primary-button"><i class="fa-solid fa-eye"></i></button></a>
-                        </div>
-                  </div> -->
-
             </div>
       </div>
 </section>
