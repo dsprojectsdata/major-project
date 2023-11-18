@@ -2,7 +2,8 @@
 include('layout/header.php')
 ?>
 
-<h1>Dashboard</h1>
+<h4 class="py-10">Dashboard</h4>
+
 
 <?php
 include('layout/footer.php')

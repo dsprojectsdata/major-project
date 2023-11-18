@@ -17,7 +17,7 @@ include(__DIR__ . '/../../config/connection.php');
       <div class="body">
             <aside class="sidebar">
                   <div class="logo">
-                        <h1>LOGO</h1>
+                    <a href="<?php echo $site_url ?>index.php"><img src="<?php echo $site_url . 'assets/img/logo.png' ?>" alt=""></a>
                   </div>
                   <ul>
                         <li><a href="http://localhost/major-project/admin/index.php">Dashboard</a></li>
@@ -30,8 +30,7 @@ include(__DIR__ . '/../../config/connection.php');
             <div class="content-area">
                   <header>
                         <ul>
-                              <li><a href="">Home</a></li>
-                              <li><a href="">Logout</a></li>
+                              <li><a href="#">Logout</a></li>
                         </ul>
                   </header>
                   <div class="content">

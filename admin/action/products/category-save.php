@@ -8,6 +8,8 @@ $image = $_FILES['image']['name'];
 
 $image = time().'-'.$_FILES['image']['name'];
 
+// $ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+
 
 $sql = " INSERT INTO category (name,image) VALUES ('$name', '$image')";
 

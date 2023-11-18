@@ -12,13 +12,13 @@ $result = mysqli_query($con, $sql);
 ?>
 
 <div class="card-header">
-      <h1>Product Page</h1>
+      <h4 class="py-10">Product Page</h4>
 </div>
 
 <div class="card-block">
       <div class="card-left">
             <div class="form-group">
-                  <p>Add Category</p>
+                  <p>Add Product</p>
                   <p class="success-msg"><?php if (isset($_SESSION['success'])) {
                                                 echo $_SESSION['success'];
                                                 unset($_SESSION['success']);
