@@ -76,25 +76,42 @@ label {
 .text-right {
     text-align: right;
 }
+.d-flex{
+    display:flex
+}
+.gap-10{
+    gap: 10px;
+}
+.gap-20{
+    gap: 20px;
+}
 
-input {
+input,textarea {
     padding: 12px;
     font-size: 14px;
     width: 100%;
     border: 1px solid #c3c1c1;
     margin: 10px 0;
     background: transparent;
+    box-sizing: border-box;
 }
-input:focus {
+input:focus,textarea:focus {
     border: 1px solid #ee838b;
     outline: 0;
 }
+input[type="radio"] {
+    width: revert;
+}
+textarea {
+    resize: none;
+  }
 .w-100 {
     width: 100%;
 }
 
 .form-input {
     margin: 10px 0;
+    width: 100%;
 }
 .form-btn button {
     width: 100%;
@@ -117,10 +134,31 @@ input:focus {
 }
 
 .section-heading {
-    margin: 30px 0;
+    margin: 30px 0 60px;
     text-align: center;
     color: #696969;
+    position: relative;
 }
+.section-heading::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: #696969;
+    position: absolute;
+    border-radius: 50%;
+    top: 80px;
+    transform: translate(-50%, 0);
+}
+.section-heading::after {
+    content: "";
+    border: 1px solid #696969;
+    width: 30%;
+    position: absolute;
+    transform: translate(-50%, 0);
+    top: 85px;
+}
+
+
 .section-heading h3 {
     margin: 20px 0 0;
 }
@@ -154,7 +192,7 @@ header {
     align-items: center;
 }
 
-.header-menu ul li a:hover{
+.header-menu ul li a:hover {
     color: #ee838b;
 }
 
@@ -459,8 +497,59 @@ footer {
     font-size: 20px;
     cursor: pointer;
 }
-.filter-option select{
+.filter-option select {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
+}
+
+/* --------------------------------------------USER ORDER ---------------------------------------------------- */
+.user-order-block {
+    margin: 40px 0;
+    gap: 30px;
+}
+.user-address-form,
+.user-place-order {
+    width: 50%;
+}
+.user-order-heading {
+    font-weight: 600;
+    background: #f2f3f5;
+    padding: 20px 15px;
+}
+.user-place-order-block {
+    padding: 15px 20px;
+    border: 1px solid #e1e1e2;
+    border-top: 0;
+}
+
+/* --------------------------------------------CONTACT US ---------------------------------------------------- */
+
+.contact-block {
+    margin: 20px 0 50px;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.contact-address h4{
+    color: #000;
+}
+.contact-address{
+    width: 30%;
+}
+.contact-address ul li {
+    margin: 15px 0;
+}
+.contact-form{
+    margin: 0 0 60px;
+}
+.contact-form-block {
+    width: 50%;
+    margin: auto;
+}
+.contact-form-block input{
+    padding: 17px
+}
+.contact-location iframe{
+    width: 100%;
+    height: 500px;
 }

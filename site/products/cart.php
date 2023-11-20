@@ -78,7 +78,9 @@ include(__DIR__ . '/../layout/header.php');
                                     <td><b>$<?php echo $total ?></b></td>
                               </tr>
                               <tr>
-                                    <td colspan="2" style="text-align:right"><button type="button" class="primary-button">Proceed To Checkout</button></td>
+                                    <td colspan="2" style="text-align:right">
+                                    <a href="<?php echo $site_url ?>user/checkout-address.php">
+                              <button type="button" class="primary-button">Proceed To Checkout</button></a></td>
                               </tr>
                         </tbody>
                   </table>

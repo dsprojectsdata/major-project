@@ -28,7 +28,7 @@ include(__DIR__ . '/../../config/connection.php');
                 <div class="header-menu">
                     <ul>
                         <li><a href="<?php echo $site_url ?>index.php">Home</a></li>
-                        <li><a href="#"> Contact</a></li>
+                        <li><a href="<?php echo $site_url ?>contact.php"> Contact</a></li>
                         <li><a href="#"> Blogs</a></li>
                         <li><a href="<?php echo $site_url ?>orders.php"> Orders</a></li>
                         <li><a href="<?php echo $site_url ?>products/cart.php"> Cart<span class="cart-count">

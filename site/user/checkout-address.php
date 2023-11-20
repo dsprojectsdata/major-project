@@ -9,80 +9,85 @@ include(__DIR__ . '/../layout/header.php');
 <section class="page-banner-section">
       <div class="container">
             <div class="page-banner-content">
-                  <h1>MY CART</h1>
+                  <h1>ADDRESS</h1>
             </div>
       </div>
 </section>
 
 
-<section class="cart-page">
+<section class="user-order">
       <div class="container">
-            <div class="cart-block">
-                  <table>
-                        <thead>
-                              <tr>
-                                    <th>S. No</th>
-                                    <th>Image</th>
-                                    <th>Name</th>
-                                    <th>Price</th>
-                                    <th>Delete</th>
-                              </tr>
-                        </thead>
-                        <tbody>
+            <div class="user-order-block d-flex">
+                  <div class="user-address-form">
+                        <div class="user-order-heading">
+                              <p>Billing Details</p>
+                        </div>
+                        <form action="form-input">
+                              <div class="d-flex gap-20">
+                                    <div class="form-input">
+                                          <label for="first-name">Name</label>
+                                          <input type="text" id="first-name" placeholder="Enter first name">
+                                    </div>
+                                    <div class="form-input">
+                                          <label for="last-name">Last Name</label>
+                                          <input type="text" id="last-name" placeholder="Enter last name">
+                                    </div>
+                              </div>
 
-                              <?php
-                              $i = 1;
-                              if (isset($_SESSION['cart'])) {
+                              <div class="d-flex gap-20">
+                                    <div class="form-input">
+                                          <label for="email">Email</label>
+                                          <input type="text" id="email" placeholder="Enter email">
+                                    </div>
+                                    <div class="form-input">
+                                          <label for="">Mobile</label>
+                                          <input type="text" placeholder="Enter mobile">
+                                    </div>
+                              </div>
 
-                                    foreach ($_SESSION['cart'] as $key => $item) { ?>
-                                          <tr>
-                                                <td><?php echo $i++; ?></td>
-                                                <td><img src="<?php echo $site_url . 'assets/img/products/shop-1.jpg' ?>" class="cart-img"></td>
-                                                <td><?php echo $item['name'] ?></td>
-                                                <td><b>$<?php echo $item['price'] ?></b></td>
-                                                <td><a href="<?php echo $site_url . 'action/cart-product-remove.php?id=' . $item['id'] ?>"><i class="fa-solid fa-trash"></i></a></td>
-                                          </tr>
-                                    <?php
-                                    }
-                              } else { ?>
-                                    <tr>
-                                          <td colspan="5" style="text-align:center">No product in cart</td>
-                                    </tr>
-                              <?php }
-                              ?>
-                        </tbody>
-                  </table>
-                  <div class="my-10 text-right">
-                        <button type="button" class="primary-button"><i class="fa-solid fa-trash"></i> Clear Cart</button>
+                              <div class="form-input">
+                                    <label for="address">Address</label>
+                                    <input type="text" id="address" placeholder="Enter address">
+                              </div>
+
+                              <div class="form-input">
+                                    <label for="city">Town/City</label>
+                                    <input type="text" id="city" placeholder="Enter city">
+                              </div>
+                              <div class="form-input">
+                                    <label for="zip">Zip Code</label>
+                                    <input type="text" id="zip" placeholder="Enter zip">
+                              </div>
+
+                              <div class="form-input">
+                                    <label for="notes">Order Notes</label>
+                                    <textarea type="text" rows="5" id="notes" placeholder="Enter notes"></textarea>
+                              </div>
+                        </form>
                   </div>
+                  <div class="user-place-order">
+                        <div class="user-order-heading">
+                              <p>Payment Proccess</p>
+                        </div>
+                        <div class="user-place-order-block">
+                              <div class="form-input">
+                                    <label for="cod">
+                                          <input type="radio" id="cod" name="payment_type">
+                                          Cash On Delivery
+                                    </label>
+                                    <label for="paytm">
+                                          <input type="radio" id="paytm" name="payment_type">
+                                          Paytm
+                                    </label>
+                              </div>
+                              <div class="form-input form-btn">
+                                    <button class="primary-button">Place Your Order <i class="fa-solid fa-up-right-from-square"></i></button>
+                              </div>
+                        </div>
+                  </div>
+
             </div>
 
-            <?php
-            $total = 0;
-            if (isset($_SESSION['cart'])) {
-                  foreach ($_SESSION['cart'] as $key => $value) {
-                        $total += $value['price'];
-                  }
-            }
-            ?>
-            <div class="cart-total">
-                  <table>
-                        <thead>
-                              <tr>
-                                    <th colspan="2">Cart Total</th>
-                              </tr>
-                        </thead>
-                        <tbody>
-                              <tr>
-                                    <td>Order Total:</td>
-                                    <td><b>$<?php echo $total ?></b></td>
-                              </tr>
-                              <tr>
-                                    <td colspan="2" style="text-align:right"><button type="button" class="primary-button">Proceed To Checkout</button></td>
-                              </tr>
-                        </tbody>
-                  </table>
-            </div>
       </div>
 </section>
 
