@@ -104,6 +104,9 @@ select {
 .form-group {
     margin: 12px 0;
 }
+.img-icon {
+    width: 50px;
+}
 
 .body {
     display: flex;

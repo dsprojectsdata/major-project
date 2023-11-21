@@ -12,3 +12,13 @@ if (!$con) {
 }
 
 include('constants.php');
+
+function pre($data = '', $status = FALSE)
+{
+      echo "<pre>";
+      print_r($data);
+      echo "</pre>";
+      if (!$status) {
+            die;
+      }
+}

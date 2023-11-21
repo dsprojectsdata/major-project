@@ -29,11 +29,10 @@ $cateResult = mysqli_query($con, $cateSql);
                   <p>Choose our best categories</p>
             </div>
             <div class="category-block">
-                  <?php
-                  while ($data = $cateResult->fetch_assoc()) { ?>
+                  <?php while ($data = $cateResult->fetch_assoc()) { ?>
                         <div class="category">
                               <img src="<?php echo $site_url . 'assets/uploads/category/' . $data['image'] ?>" alt="">
-                              <p class="text-center my-10"><?php echo $data['name']?></p>
+                              <p class="text-center my-10"><?php echo $data['name'] ?></p>
                         </div>
 
                   <?php

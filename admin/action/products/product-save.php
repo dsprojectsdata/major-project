@@ -10,27 +10,25 @@ $long_description = $_POST['long_description'];
 $category = $_POST['category'];
 $image = $_FILES['image']['name'];
 
-
-// die;
 $errors = [];
 
-// if ($name == '') {
-//       $errors['name'] = "name is requrired";
-// }
+if ($name == '') {
+      $errors['name'] = "name is requrired";
+}
 
-// if ($price == '') {
-//       $errors['price'] = "price is requrired";
-// }
+if ($price == '') {
+      $errors['price'] = "price is requrired";
+}
 
-// if ($description == '') {
-//       $errors['description'] = "description is requrired";
-// }
-// if ($long_description == '') {
-//       $errors['long_description'] = "long description is requrired";
-// }
-// if ($category == '') {
-//       $errors['category'] = "category is requrired";
-// }
+if ($description == '') {
+      $errors['description'] = "description is requrired";
+}
+if ($long_description == '') {
+      $errors['long_description'] = "long description is requrired";
+}
+if ($category == '') {
+      $errors['category'] = "category is requrired";
+}
 if ($image == '') {
       $errors['image'] = "image is requrired";
 }
