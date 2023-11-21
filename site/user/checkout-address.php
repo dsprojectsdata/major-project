@@ -19,7 +19,6 @@ include(__DIR__ . '/../layout/header.php');
       <div class="container">
             <div class="user-order-block">
                   <form method="post" action="../action/order-place-action.php">
-
                         <div class="user-order-form d-flex">
                               <div class="user-address-form">
                                     <div class="user-order-heading">
