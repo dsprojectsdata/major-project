@@ -5,7 +5,9 @@ if (isset($_SESSION['userInfo'])) {
       header("location:$site_url");
 }
 
-
+if (isset($_SESSION['error'])) {
+      $error = $_SESSION['error'];
+}
 
 ?>
 
@@ -17,14 +19,30 @@ if (isset($_SESSION['userInfo'])) {
                         <p class="text-grey">Log in to access all your resources</p>
                   </div>
                   <div class="auth-form">
-                        <form action="form-input">
+                  <form method="post" action="../action/login-action.php">
                               <div class="form-input">
                                     <label for="">Email</label>
-                                    <input type="text" placeholder="Enter email">
+                                    <input type="text" name="email" placeholder="Enter email">
+                                    <?php
+                                    if (isset($error['email'])) { ?>
+                                          <p class="error-msg"><?php echo $error['email']; ?></p>
+
+                                    <?php
+                                          unset($_SESSION['error']['email']);
+                                    }
+                                    ?>
                               </div>
                               <div class="form-input">
                                     <label for="">Password</label>
-                                    <input type="text" placeholder="Enter password">
+                                    <input type="text" name="password" placeholder="Enter password">
+                                    <?php
+                                    if (isset($error['password'])) { ?>
+                                          <p class="error-msg"><?php echo $error['password']; ?></p>
+
+                                    <?php
+                                          unset($_SESSION['error']['password']);
+                                    }
+                                    ?>
                               </div>
                               <div class="form-input form-btn">
                                     <button class="primary-button">Login</button>

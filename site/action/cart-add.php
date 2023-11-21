@@ -1,7 +1,11 @@
 <?php
 
 include(__DIR__ . '/../../config/connection.php');
-echo "<pre>";
+
+if (!isset($_SESSION['userInfo'])) {
+    header("location:$site_url");
+}else{
+
 
 $id = $_GET['id'];
 
@@ -12,3 +16,5 @@ $data = $result->fetch_assoc();
 
 $_SESSION['cart'][$id] = $data;
 header("location:$site_url");
+
+}

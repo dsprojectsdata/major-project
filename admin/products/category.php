@@ -34,13 +34,93 @@ include('../layout/header.php');
       </div>
 
       <div class="card-right">
-            <form action="">
-                  <div>
-                        <label for="">Name</label>
-                        <input type="text" name="name" placeholder="Enter category name">
-                  </div>
+      <table id="myTable" class="display">
+    <thead>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Row 1 Data 1</td>
+            <td>Row 1 Data 2</td>
+        </tr>
+        <tr>
+            <td>Row 2 Data 1</td>
+            <td>Row 2 Data 2</td>
+        </tr>
 
-            </form>
+        <tr>
+            <td>asd</td>
+            <td>aaaaa</td>
+        </tr>
+
+        <tr>
+            <td>bbbb</td>
+            <td>ccccc</td>
+        </tr>
+
+        <tr>
+            <td>Row 1 Data 1</td>
+            <td>Row 1 Data 2</td>
+        </tr>
+        <tr>
+            <td>Row 2 Data 1</td>
+            <td>Row 2 Data 2</td>
+        </tr>
+
+        <tr>
+            <td>asd</td>
+            <td>aaaaa</td>
+        </tr>
+
+        <tr>
+            <td>bbbb</td>
+            <td>ccccc</td>
+        </tr>
+
+
+        <tr>
+            <td>Row 1 Data 1</td>
+            <td>Row 1 Data 2</td>
+        </tr>
+        <tr>
+            <td>Row 2 Data 1</td>
+            <td>Row 2 Data 2</td>
+        </tr>
+
+        <tr>
+            <td>asd</td>
+            <td>aaaaa</td>
+        </tr>
+
+        <tr>
+            <td>bbbb</td>
+            <td>ccccc</td>
+        </tr>
+
+
+        <tr>
+            <td>Row 1 Data 1</td>
+            <td>Row 1 Data 2</td>
+        </tr>
+        <tr>
+            <td>Row 2 Data 1</td>
+            <td>Row 2 Data 2</td>
+        </tr>
+
+        <tr>
+            <td>asd</td>
+            <td>aaaaa</td>
+        </tr>
+
+        <tr>
+            <td>bbbb</td>
+            <td>ccccc</td>
+        </tr>
+    </tbody>
+</table>
       </div>
 </div>
 
@@ -48,3 +128,8 @@ include('../layout/header.php');
 <?php
 include('../layout/footer.php')
 ?>
+<script>
+      $(document).ready( function () {
+          $('#myTable').DataTable();
+      } );
+</script>
