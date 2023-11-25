@@ -1,7 +1,6 @@
 <?php
 
 include(__DIR__ . '/../../config/connection.php');
-echo "<pre>";
 
 
 $name = $_POST['name'];

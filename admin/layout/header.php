@@ -15,10 +15,11 @@ include(__DIR__ . '/../../config/connection.php');
 
 
       <link rel="stylesheet" href="<?php echo $admin_url ?>assets/css/style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-      
+
       <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
 </head>
 
@@ -26,12 +27,14 @@ include(__DIR__ . '/../../config/connection.php');
       <div class="body">
             <aside class="sidebar">
                   <div class="logo">
-                    <a href="<?php echo $site_url ?>index.php"><img src="<?php echo $site_url . 'assets/img/logo.png' ?>" alt=""></a>
+                        <a href="<?php echo $site_url ?>index.php"><img src="<?php echo $site_url . 'assets/img/logo.png' ?>" alt=""></a>
                   </div>
                   <ul>
                         <li><a href="http://localhost/major-project/admin/index.php">Dashboard</a></li>
-                        <li> <a href="http://localhost/major-project/admin/products/category.php">Category</a></li>
-                        <li> <a href="http://localhost/major-project/admin/products/product.php">Product</a></li>
+                        <li><a href="http://localhost/major-project/admin/products/category.php">Category</a></li>
+                        <li><a href="http://localhost/major-project/admin/products/product.php">Product</a></li>
+                        <li><a href="http://localhost/major-project/admin/products/order.php">Order</a></li>
+                        <li><a href="http://localhost/major-project/admin/contact/index.php">Contact Info</a></li>
                   </ul>
             </aside>
 

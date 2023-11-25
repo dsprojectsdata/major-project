@@ -10,7 +10,7 @@ $result = mysqli_query($con, $sql);
 ?>
 
 <div class="card-header">
-    <h4 class="py-10">Category Page</h4>
+    <h4 class="py-10">Contact Info</h4>
 </div>
 
 <div class="card-block">
@@ -20,12 +20,12 @@ $result = mysqli_query($con, $sql);
                                     unset($_SESSION['success']);
                                 } ?></p>
         <div class="form-group">
-            <p>Add Category</p>
+            <p>Add Contact Info</p>
         </div>
-        <form method="post" action="<?php echo $admin_url ?>action/products/category-save.php" enctype="multipart/form-data">
+        <form method="post" action="<?php echo $admin_url ?>action/contact-save.php" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Name</label>
-                <input type="text" name="name" placeholder="Enter category name">
+                <input type="text" name="name" placeholder="Enter name">
                 <p class="error"><?php
                                           if (isset($error['name'])) {
                                                 echo $error['name'];
@@ -35,12 +35,34 @@ $result = mysqli_query($con, $sql);
             </div>
 
             <div class="form-group">
-                <label for="">Image</label>
-                <input type="file" name="image" placeholder="Enter category name">
+                <label for="">Address</label>
+                <input type="text" name="address" placeholder="Enter address">
                 <p class="error"><?php
-                                          if (isset($error['image'])) {
-                                                echo $error['image'];
-                                                unset($_SESSION['error']['image']);
+                                          if (isset($error['address'])) {
+                                                echo $error['address'];
+                                                unset($_SESSION['error']['address']);
+                                          }
+                                          ?></p>
+            </div>
+
+            <div class="form-group">
+                <label for="">Mobile</label>
+                <input type="text" name="mobile" placeholder="Enter mobile">
+                <p class="error"><?php
+                                          if (isset($error['mobile'])) {
+                                                echo $error['mobile'];
+                                                unset($_SESSION['error']['mobile']);
+                                          }
+                                          ?></p>
+            </div>
+
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="text" name="email" placeholder="Enter email">
+                <p class="error"><?php
+                                          if (isset($error['email'])) {
+                                                echo $error['email'];
+                                                unset($_SESSION['error']['email']);
                                           }
                                           ?></p>
             </div>

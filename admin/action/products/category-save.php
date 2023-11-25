@@ -6,11 +6,13 @@ include('../../../config/connection.php');
 $name = $_POST['name'];
 $image = $_FILES['image']['name'];
 
-// $ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+
+
+
+
 
 
 $errors = [];
-
 if ($name == '') {
       $errors['name'] = "Name field is requrired";
 }
@@ -24,7 +26,7 @@ if (count($errors) > 0) {
 } else {
 
       $name = ucfirst($name);
-      $image = time() . '-' . $_FILES['image']['name'];
+      $image = time() . '-' . md5($image) . '.' . pathinfo($image, PATHINFO_EXTENSION);
 
       $sql = " INSERT INTO category (name,image) VALUES ('$name', '$image')";
 

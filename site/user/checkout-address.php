@@ -1,8 +1,9 @@
 <?php
 include(__DIR__ . '/../layout/header.php');
-// echo "<pre>";
-// print_r($_SESSION['cart']);
-// echo "</pre>";
+
+if (!isset($_SESSION['cart'])) {
+      header("location:$site_url");
+}
 
 ?>
 

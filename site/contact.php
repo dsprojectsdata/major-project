@@ -1,8 +1,8 @@
 <?php
 include(__DIR__ . '/layout/header.php');
-// echo "<pre>";
-// print_r($_SESSION['cart']);
-// echo "</pre>";
+
+$sql = "SELECT * from contact_info ";
+$result = mysqli_query($con, $sql);
 
 ?>
 
@@ -22,19 +22,26 @@ include(__DIR__ . '/layout/header.php');
                   <p>Contact us for more information or for better deals</p>
             </div>
             <div class="contact-block d-flex">
+
+            <?php while ($data = $result->fetch_assoc()) {
+                  ?>
                   <div class="contact-address text-grey">
-                        <h4>USA Office</h4>
+                        <h4><?php echo $data['name'] ?></h4>
                         <ul>
                               <li class="d-flex gap-10">
                                     <span><i class="fa-solid fa-map-marker-alt"></i></span>
-                                    <span>PO Box 16122 Collins Street West Victoria 8007 Canada</span>
+                                    <span><?php echo $data['address'] ?></span>
                               </li>
-                              <li><i class="fa-solid fa-phone"></i> +91 7891560120</li>
-                              <li><i class="fa-solid fa-envelope"></i> info@example.com</li>
+                              <li><i class="fa-solid fa-phone"></i> <?php echo $data['mobile'] ?></li>
+                              <li><i class="fa-solid fa-envelope"></i> <?php echo $data['email'] ?></li>
                         </ul>
                   </div>
 
-                  <div class="contact-address text-grey">
+                  <?php
+                  }
+                  ?>
+
+                  <!-- <div class="contact-address text-grey">
                         <h4>UK Office</h4>
                         <ul>
                               <li class="d-flex gap-10">
@@ -56,7 +63,7 @@ include(__DIR__ . '/layout/header.php');
                               <li><i class="fa-solid fa-phone"></i> +91 7891560120</li>
                               <li><i class="fa-solid fa-envelope"></i> info@example.com</li>
                         </ul>
-                  </div>
+                  </div> -->
             </div>
       </div>
 </section>

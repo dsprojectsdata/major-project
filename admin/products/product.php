@@ -16,7 +16,7 @@ $result = mysqli_query($con, $sql);
 </div>
 
 <div class="card-block">
-      <div class="card-left">
+      <div class="card-left card-layout">
             <div class="form-group">
                   <p>Add Product</p>
                   <p class="success-msg"><?php if (isset($_SESSION['success'])) {
@@ -105,7 +105,7 @@ $result = mysqli_query($con, $sql);
             </form>
       </div>
 
-      <div class="card-right">
+      <div class="card-right card-layout">
 
       </div>
 </div>

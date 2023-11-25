@@ -1,8 +1,6 @@
 <?php
 include(__DIR__ . '/../layout/header.php');
-// echo "<pre>";
-// print_r($_SESSION['cart']);
-// echo "</pre>";
+// pre($_SESSION);
 
 ?>
 
@@ -53,7 +51,7 @@ include(__DIR__ . '/../layout/header.php');
                         </tbody>
                   </table>
                   <div class="my-10 text-right">
-                        <button type="button" class="primary-button"><i class="fa-solid fa-trash"></i> Clear Cart</button>
+                        <a href="<?php echo $site_url . 'action/cart-product-remove.php?type=all-clear'?>"><button type="button" class="primary-button"><i class="fa-solid fa-trash"></i> Clear Cart</button></a>
                   </div>
             </div>
 
@@ -79,8 +77,9 @@ include(__DIR__ . '/../layout/header.php');
                               </tr>
                               <tr>
                                     <td colspan="2" style="text-align:right">
-                                    <a href="<?php echo $site_url ?>user/checkout-address.php">
-                              <button type="button" class="primary-button">Proceed To Checkout</button></a></td>
+                                          <a href="<?php echo $site_url ?>user/checkout-address.php">
+                                                <button type="button" class="primary-button">Proceed To Checkout</button></a>
+                                    </td>
                               </tr>
                         </tbody>
                   </table>

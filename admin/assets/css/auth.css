@@ -7,6 +7,9 @@ h1 {
     margin: 0;
     font-weight: 500;
 }
+p{
+    margin: 0;
+}
 input {
     width: 100%;
     padding: 10px;
@@ -31,6 +34,10 @@ input:focus {
     background: #fff;
     border-radius: 5px;
     padding: 30px 40px 40px;
+}
+.error {
+    color: red;
+    text-align: left;
 }
 
 .form-input {

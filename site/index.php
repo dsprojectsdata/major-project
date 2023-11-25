@@ -7,6 +7,7 @@ $proResult = mysqli_query($con, $proSql);
 
 $cateSql = "SELECT * from category ";
 $cateResult = mysqli_query($con, $cateSql);
+
 ?>
 
 <section class="banner-section">
@@ -32,7 +33,7 @@ $cateResult = mysqli_query($con, $cateSql);
                   <?php while ($data = $cateResult->fetch_assoc()) { ?>
                         <div class="category">
                               <img src="<?php echo $site_url . 'assets/uploads/category/' . $data['image'] ?>" alt="">
-                              <p class="text-center my-10"><?php echo $data['name'] ?></p>
+                              <a href="<?php echo $site_url ?>products/search.php?cate_id=<?php echo $data['id'] ?>"><p class="text-center my-10"><?php echo $data['name'] ?></p></a>
                         </div>
 
                   <?php
