@@ -1,7 +1,9 @@
 <?php
 include(__DIR__ . '/../layout/header.php');
-// pre($_SESSION);
 
+if (!isset($_SESSION['userInfo'])) {
+      header("location:$site_url");
+}
 ?>
 
 <section class="page-banner-section">

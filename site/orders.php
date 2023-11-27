@@ -1,7 +1,5 @@
 <?php
 include(__DIR__ . '/layout/header.php');
-// echo "<pre>";
-// echo "</pre>";
 
 if (!isset($_SESSION['userInfo'])) {
       header("location:$site_url");

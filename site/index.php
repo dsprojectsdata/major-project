@@ -33,7 +33,9 @@ $cateResult = mysqli_query($con, $cateSql);
                   <?php while ($data = $cateResult->fetch_assoc()) { ?>
                         <div class="category">
                               <img src="<?php echo $site_url . 'assets/uploads/category/' . $data['image'] ?>" alt="">
-                              <a href="<?php echo $site_url ?>products/search.php?cate_id=<?php echo $data['id'] ?>"><p class="text-center my-10"><?php echo $data['name'] ?></p></a>
+                              <a href="<?php echo $site_url ?>products/search.php?cate_id=<?php echo $data['id'] ?>">
+                                    <p class="text-center my-10"><?php echo $data['name'] ?></p>
+                              </a>
                         </div>
 
                   <?php
@@ -55,7 +57,7 @@ $cateResult = mysqli_query($con, $cateSql);
                   ?>
 
                         <div class="product">
-                              <img src="<?php echo $admin_url . 'assets/uploads/products/' . $data['img'] ?>" alt="">
+                              <img src="<?php echo $site_url . 'assets/uploads/products/' . $data['img'] ?>" alt="">
                               <div class="my-10 text-left">
                                     <p class="px-10"><?php echo $data['name'] ?> </p>
                                     <p class="px-10"><b>$<?php echo $data['price'] ?></b></p>

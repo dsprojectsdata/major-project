@@ -28,23 +28,22 @@ include(__DIR__ . '/../../config/connection.php');
                 <div class="header-menu">
                     <ul>
                         <li><a href="<?php echo $site_url ?>index.php">Home</a></li>
+                        <li><a href="<?php echo $site_url ?>about.php"> About Us</a></li>
                         <li><a href="<?php echo $site_url ?>contact.php"> Contact</a></li>
                         <li><a href="#"> Blogs</a></li>
 
                         <?php
                         if (isset($_SESSION['userInfo'])) { ?>
                             <li><a href="<?php echo $site_url ?>orders.php"> Orders</a></li>
-
-
-<?php
+                            <li><a href="<?php echo $site_url ?>products/cart.php"> Cart<span class="cart-count">
+                                        <?php if (isset($_SESSION['cart'])) {
+                                            echo count($_SESSION['cart']);
+                                        } else {
+                                            echo 0;
+                                        } ?> </span></a></li>
+                        <?php
                         } ?>
 
-                        <li><a href="<?php echo $site_url ?>products/cart.php"> Cart<span class="cart-count">
-                                    <?php if (isset($_SESSION['cart'])) {
-                                        echo count($_SESSION['cart']);
-                                    } else {
-                                        echo 0;
-                                    } ?> </span></a></li>
                         <li><a href="<?php echo $site_url ?>products/search.php"> <i class="fa-solid fa-search"></i></a></li>
                         <?php
                         if (isset($_SESSION['userInfo'])) { ?>

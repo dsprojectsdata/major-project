@@ -34,7 +34,6 @@ if ($image == '') {
 }
 if (count($errors) > 0) {
       $_SESSION['error']  = $errors;
-      // header('location:http://localhost/full-stack/form/');
 } else {
 
       $sql = " INSERT INTO product (name,price,description,long_description,category,img) VALUES ('$name','$price','$description','$long_description','$category','$image')";
