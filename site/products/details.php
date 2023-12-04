@@ -23,7 +23,7 @@ $pro_data = $result->fetch_assoc();
       <div class="container">
             <div class="pro-details-block">
                   <div class="pro-details-left">
-                        <img src="<?php echo $admin_url . 'assets/uploads/products/' . $pro_data['img'] ?>" alt="">
+                        <img src="<?php echo $site_url . 'assets/uploads/products/' . $pro_data['img'] ?>" alt="">
 
                   </div>
                   <div class="pro-details-right">
