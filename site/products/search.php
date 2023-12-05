@@ -9,12 +9,6 @@ $min = isset($_GET['min']) ? $_GET['min'] : 0;
 $max = isset($_GET['max']) ? $_GET['max'] : 0;
 $cate_id = isset($_GET['cate_id']) ? $_GET['cate_id'] : '';
 
-
-// $name = $_GET['name'];
-// $min = $_GET['min'];
-// $max = $_GET['max'];
-// $cate_id = $_GET['cate_id'];
-
 $proSql = "SELECT * from product WHERE 1";
 
 if ($min || $max) {
@@ -27,14 +21,7 @@ if ($cate_id) {
       $proSql .= " AND category =  '$cate_id '";
 }
 
-
 $proResult = mysqli_query($con, $proSql);
-
-// while ($data = $proResult->fetch_assoc()) {
-
-// pre($data, 'asd');
-// }
-
 ?>
 
 <section class="page-banner-section">
@@ -94,8 +81,8 @@ $proResult = mysqli_query($con, $proSql);
                                           <p class="px-10"><b>$<?php echo $data['price'] ?></b></p>
                                     </div>
                                     <div class="product-btns my-10">
-                                          <a href=""><button class="primary-button"><i class="fa-solid fa-cart-plus"></i></button></a>
-                                          <a href=""><button class="primary-button"><i class="fa-solid fa-eye"></i></button></a>
+                                          <a href="<?php echo $site_url ?>action/cart-add.php?id=<?php echo $data['id'] ?>"><button class="primary-button"><i class="fa-solid fa-cart-plus"></i></button></a>
+                                          <a href="<?php echo $site_url . 'products/details.php?id=' . $data['id'] ?>"><button class="primary-button"><i class="fa-solid fa-eye"></i></button></a>
                                     </div>
                               </div>
                         <?php } ?>

@@ -8,7 +8,7 @@ $proResult = mysqli_query($con, $proSql);
 $cateSql = "SELECT * from category ";
 $cateResult = mysqli_query($con, $cateSql);
 
-$blogSql = "SELECT * from blogs ";
+$blogSql = "SELECT * from blogs ORDER BY created_at DESC LIMIT 4 ";
 $blogResult = mysqli_query($con, $blogSql);
 
 ?>
@@ -87,7 +87,7 @@ $blogResult = mysqli_query($con, $blogSql);
                   <?php while ($data = $blogResult->fetch_assoc()) {
                   ?>
                         <div class="blogs">
-                              <img src="<?php echo $site_url . 'assets/uploads/products/shop-3.jpg' ?>" alt="">
+                              <img src="<?php echo $site_url . 'assets/uploads/blogs/'.$data['img'] ?>" alt="">
                               <div class="my-10 text-left">
                                     <p class="px-10"><?php echo $data['title'] ?></p>
                                     <p class="px-10"><?php echo substr($data['description'],0,60) ?></p>

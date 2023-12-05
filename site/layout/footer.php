@@ -22,7 +22,7 @@
             </div>
             <div class="footer-contact">
                 <h5>Contact</h5>
-                <p>sad as d sad sa ds</p>
+                <p>PO Box 16122 Collins Street West</p>
                 <p>+91 7894561230</p>
                 <p>info@gmail.com</p>
             </div>

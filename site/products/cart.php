@@ -37,7 +37,7 @@ if (!isset($_SESSION['userInfo'])) {
                                     foreach ($_SESSION['cart'] as $key => $item) { ?>
                                           <tr>
                                                 <td><?php echo $i++; ?></td>
-                                                <td><img src="<?php echo $site_url . 'assets/img/products/shop-1.jpg' ?>" class="cart-img"></td>
+                                                <td><img src="<?php echo $site_url . 'assets/img/products/'.$item['img'] ?>" class="cart-img"></td>
                                                 <td><?php echo $item['name'] ?></td>
                                                 <td><b>$<?php echo $item['price'] ?></b></td>
                                                 <td><a href="<?php echo $site_url . 'action/cart-product-remove.php?id=' . $item['id'] ?>"><i class="fa-solid fa-trash"></i></a></td>

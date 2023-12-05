@@ -15,6 +15,6 @@ $result = mysqli_query($con, $sql);
 $data = $result->fetch_assoc();
 
 $_SESSION['cart'][$id] = $data;
-header("location:$site_url");
+header("location:$site_url"."products/cart.php");
 
 }

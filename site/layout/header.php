@@ -26,7 +26,7 @@ include(__DIR__ . '/../../config/connection.php');
                         <li><a href="<?php echo $site_url ?>index.php">Home</a></li>
                         <li><a href="<?php echo $site_url ?>about.php"> About Us</a></li>
                         <li><a href="<?php echo $site_url ?>contact.php"> Contact</a></li>
-                        <li><a href="#"> Blogs</a></li>
+                        <li><a href="<?php echo $site_url ?>blogs/index.php"> Blogs</a></li>
 
                         <?php
                         if (isset($_SESSION['userInfo'])) { ?>
