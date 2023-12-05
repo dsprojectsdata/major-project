@@ -1,8 +1,6 @@
 <?php
 
 include(__DIR__ . '/../../config/connection.php');
-echo "<pre>";
-
 
 $email = $_POST['email'];
 $password = $_POST['password'];

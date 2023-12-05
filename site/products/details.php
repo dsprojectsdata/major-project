@@ -1,13 +1,10 @@
 <?php
 include(__DIR__ . '/../layout/header.php');
-// echo "<pre>";
-// echo "</pre>";
 $id = $_GET['id'];
 
 $sql = " SELECT *,product.name as pro_name,product.id as pro_id FROM product JOIN category ON product.category = category.id WHERE product.id =$id";
 $result = mysqli_query($con, $sql);
 $pro_data = $result->fetch_assoc();
-// print_r($pro_data);
 ?>
 
 <section class="page-banner-section">

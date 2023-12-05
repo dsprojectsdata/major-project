@@ -2,6 +2,9 @@
 // include('../../config/connection.php');
 include(__DIR__ . '/../../config/connection.php');
 
+if (!isset($_SESSION['adminInfo'])) {
+      header("location:$admin_url" . "index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +38,7 @@ include(__DIR__ . '/../../config/connection.php');
                         <li><a href="http://localhost/major-project/admin/products/product.php">Product</a></li>
                         <li><a href="http://localhost/major-project/admin/products/order.php">Order</a></li>
                         <li><a href="http://localhost/major-project/admin/contact/index.php">Contact Info</a></li>
+                        <li><a href="http://localhost/major-project/admin/blogs/index.php">Blogs</a></li>
                   </ul>
             </aside>
 
@@ -42,7 +46,7 @@ include(__DIR__ . '/../../config/connection.php');
             <div class="content-area">
                   <header>
                         <ul>
-                              <li><a href="#">Logout</a></li>
+                              <li><a href="<?php echo $site_url ?>action/logout-action.php">Logout</a></li>
                         </ul>
                   </header>
                   <div class="content">

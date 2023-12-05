@@ -8,6 +8,9 @@ $proResult = mysqli_query($con, $proSql);
 $cateSql = "SELECT * from category ";
 $cateResult = mysqli_query($con, $cateSql);
 
+$blogSql = "SELECT * from blogs ";
+$blogResult = mysqli_query($con, $blogSql);
+
 ?>
 
 <section class="banner-section">
@@ -81,18 +84,23 @@ $cateResult = mysqli_query($con, $cateSql);
                   <p>Check our latest blogs to get the latest updates</p>
             </div>
             <div class="blogs-block">
-                  <div class="blogs">
-                        <img src="<?php echo $site_url . 'assets/uploads/products/shop-3.jpg' ?>" alt="">
-                        <div class="my-10 text-left">
-                              <p class="px-10">asdsa </p>
-                              <p class="px-10">asdasdas sdf sd fk hdsf ksdhf kds fds </p>
-                        </div>
-                        <div class="my-10 px-10 blogs-date">
-                              <p class="text-grey">Feb 21 2023</p>
-                              <a href="<?php echo $site_url . 'blogs/details.php' ?>" class="px-10">Read More</a>
+                  <?php while ($data = $blogResult->fetch_assoc()) {
+                  ?>
+                        <div class="blogs">
+                              <img src="<?php echo $site_url . 'assets/uploads/products/shop-3.jpg' ?>" alt="">
+                              <div class="my-10 text-left">
+                                    <p class="px-10"><?php echo $data['title'] ?></p>
+                                    <p class="px-10"><?php echo substr($data['description'],0,60) ?></p>
+                              </div>
+                              <div class="my-10 px-10 blogs-date">
+                                    <p class="text-grey"><?php echo date("M d Y",strtotime($data['created_at'])) ?> </p>
+                                    <a href="<?php echo $site_url . 'blogs/details.php?id='.$data['id'] ?>" class="px-10">Read More</a>
 
+                              </div>
                         </div>
-                  </div>
+                  <?php
+                  }
+                  ?>
             </div>
       </div>
 </section>

@@ -577,14 +577,10 @@ footer {
     max-width: 100%;
     max-height: 300px;
 }
-.blogs-btns {
-    /* position: absolute; */
-    bottom: 2%;
-    width: 100%;
-    text-align: center;
-}
+
 .blogs-details-img {
     text-align: center;
+    margin: 30px 0;
 }
 
 .blogs-date {
@@ -592,3 +588,10 @@ footer {
     justify-content: space-between;
 }
 
+.blogs-details-block {
+    margin: 50px 0;
+}
+.blogs-details-desc {
+    width: 80%;
+    margin: auto;
+}

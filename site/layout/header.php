@@ -1,9 +1,5 @@
 <?php
 include(__DIR__ . '/../../config/connection.php');
-// echo "<pre>";
-
-// echo "</pre>";
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
