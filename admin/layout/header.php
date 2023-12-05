@@ -39,6 +39,7 @@ if (!isset($_SESSION['adminInfo'])) {
                         <li><a href="http://localhost/major-project/admin/products/order.php">Order</a></li>
                         <li><a href="http://localhost/major-project/admin/contact/index.php">Contact Info</a></li>
                         <li><a href="http://localhost/major-project/admin/blogs/index.php">Blogs</a></li>
+                        <li><a href="http://localhost/major-project/admin/enquiry/index.php">Enquiry</a></li>
                   </ul>
             </aside>
 

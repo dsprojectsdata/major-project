@@ -5,7 +5,7 @@ if (isset($_SESSION['error'])) {
     $error = $_SESSION['error'];
 }
 
-$sql = "SELECT * from category ";
+$sql = "SELECT * from contact_info ";
 $result = mysqli_query($con, $sql);
 ?>
 
@@ -79,7 +79,8 @@ $result = mysqli_query($con, $sql);
                 <tr>
                     <th>S. No.</th>
                     <th>Name</th>
-                    <th>Image</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -90,7 +91,8 @@ $result = mysqli_query($con, $sql);
                     <tr>
                         <td><?php echo $i++; ?></td>
                         <td><?php echo $data['name'] ?></td>
-                        <td><img src="<?php echo $site_url . 'assets/uploads/category/' . $data['image'] ?>" class="img-icon" alt=""></td>
+                        <td><?php echo $data['mobile'] ?></td>
+                        <td><?php echo $data['email'] ?></td>
                         <td>Edit</td>
                     </tr>
                 <?php } ?>

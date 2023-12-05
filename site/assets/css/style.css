@@ -168,6 +168,11 @@ textarea {
 .error-msg {
     color: #ff0000;
 }
+.success-msg {
+    color: green;
+    font-weight: bold;
+    font-size: 18px;
+}
 
 /* ------------------HEADER -----------------*/
 header {
