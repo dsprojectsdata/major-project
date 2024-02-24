@@ -57,6 +57,8 @@ $blogResult = mysqli_query($con, $blogSql);
             </div>
             <div class="product-block">
                   <?php while ($data = $proResult->fetch_assoc()) {
+                        pre($data);
+
                   ?>
 
                         <div class="product">
